@@ -22,7 +22,7 @@ const Projects = () => {
         collaboration and new ideas for improvement.
       </p>
 
-      <div className="flex flex-wrap my-20 gap-16">
+      <div className="flex flex-wrap my-20 gap-16 block-container">
         {projects.map((project) => (
           <div className="lg:w-[400px] w-full" key={project.name}>
             <div className="relative transition-[250ms] [perspective:500px] w-12 h-12">

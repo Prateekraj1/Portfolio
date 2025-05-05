@@ -36,7 +36,7 @@ const Contact = () => {
           </a>
         </p>
         <p className="text-black-500 font-semibold mt-5 text-[#2196f3]">
-          Mobile : +91-8294867788 ( available on Call and Whatsapp ){" "}
+          Mobile : +91-8294867788 ( available on Whatsapp ){" "}
         </p>
       </div>
 
