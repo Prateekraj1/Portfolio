@@ -8,7 +8,7 @@ const Navbar = () => {
   const isActive = (path: string) => pathname === path;
 
   const linkClass = (path: string) =>
-    `${isActive(path) ? "text-blue-600 pointer-events-none opacity-50" : "text-black"} transition-colors`;
+    `${isActive(path) ? "text-blue-600 pointer-events-none opacity-50 underline" : "text-black"} transition-colors`;
 
   return (
     <header className='flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0'>

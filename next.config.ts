@@ -6,25 +6,17 @@ const nextConfig: NextConfig = {
     config.module.rules.push(
       {
         test: /\.glb$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'static/media/[name].[hash].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/media/[name].[hash][ext]',
+        },
       },
       {
         test: /\.(mp3|wav|ogg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'static/media/[name].[hash].[ext]',
-            },
-          },
-        ],
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/media/[name].[hash][ext]',
+        },
       }
     );
 
