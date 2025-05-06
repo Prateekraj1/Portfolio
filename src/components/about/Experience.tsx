@@ -11,11 +11,10 @@ const ExperienceSection = () => (
     <h3 className='font-semibold sm:text-3xl text-xl font-poppins'>Work Experience.</h3>
     <div className='mt-5 text-slate-500'>
       <p>
-        I've worked with all sorts of companies, leveling up my skills and teaming
-        up with smart people. Here's the rundown:
+      Throughout my journey, I’ve had the opportunity to work with a variety of teams and organizations, where I continuously enhanced my technical expertise and collaborated with driven professionals to build impactful solutions.
       </p>
     </div>
-    <div className='mt-12'>
+    <div className='mt-[20px]'>
       <VerticalTimeline>
         {experiences.map((experience) => (
           <VerticalTimelineElement
