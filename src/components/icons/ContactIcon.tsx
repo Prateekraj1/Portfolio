@@ -1,13 +1,13 @@
 import * as React from "react";
 import type { SVGProps } from "react";
-const SvgContact = (props: SVGProps<SVGSVGElement>) => (
+const SvgContactIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 48 48"
     {...props}
   >
-    <g clipPath="url(#contact_svg__a)">
+    <g clipPath="url(#contact-icon_svg__a)">
       <path
         fill="#2196F3"
         d="M24 48c13.255 0 24-10.745 24-24S37.255 0 24 0 0 10.745 0 24s10.745 24 24 24"
@@ -18,10 +18,10 @@ const SvgContact = (props: SVGProps<SVGSVGElement>) => (
       />
     </g>
     <defs>
-      <clipPath id="contact_svg__a">
+      <clipPath id="contact-icon_svg__a">
         <path fill="#fff" d="M0 0h48v48H0z" />
       </clipPath>
     </defs>
   </svg>
 );
-export default SvgContact;
+export default SvgContactIcon;

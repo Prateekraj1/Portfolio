@@ -1,14 +1,11 @@
 "use client";
-
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
-
 import sakura from "@/assets/sakura.mp3";
-import { soundoff, soundon } from "../assets/icons";
 import { Bird, Island, Plane, Sky } from "../models";
 import HomeInfo from "./HomeInfo";
-import Image from "next/image";
 import Loader from "./Loader";
+import { SoundoffIcon, SoundonIcon } from "./icons";
 
 const Home = () => {
   const [isMounted, setIsMounted] = useState(false); // Client check
@@ -18,16 +15,24 @@ const Home = () => {
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const [biplaneConfig, setBiplaneConfig] = useState<[number[], number[]]>([[3, 3, 3], [0, -4, -4]]);
-  const [islandConfig, setIslandConfig] = useState<[number[], number[]]>([[1, 1, 1], [0, -6.5, -43.4]]);
+  const [biplaneConfig, setBiplaneConfig] = useState<[number[], number[]]>([
+    [3, 3, 3],
+    [0, -4, -4],
+  ]);
+  const [islandConfig, setIslandConfig] = useState<[number[], number[]]>([
+    [1, 1, 1],
+    [0, -6.5, -43.4],
+  ]);
 
   useEffect(() => {
     setIsMounted(true);
 
     const adjustScreenSizes = () => {
       // Biplane
-      const biplaneScale = window.innerWidth < 768 ? [1.5, 1.5, 1.5] : [3, 3, 3];
-      const biplanePosition = window.innerWidth < 768 ? [0, -1.5, 0] : [0, -4, -4];
+      const biplaneScale =
+        window.innerWidth < 768 ? [1.5, 1.5, 1.5] : [3, 3, 3];
+      const biplanePosition =
+        window.innerWidth < 768 ? [0, -1.5, 0] : [0, -4, -4];
       setBiplaneConfig([biplaneScale, biplanePosition]);
 
       // Island
@@ -63,21 +68,28 @@ const Home = () => {
   }, [isPlayingMusic, isMounted]);
 
   return (
-    <section className='w-full h-screen relative'>
-      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+    <section className="w-full h-screen relative">
+      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
 
       <Canvas
-        className={`w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"}`}
+        className={`w-full h-screen bg-transparent ${
+          isRotating ? "cursor-grabbing" : "cursor-grab"
+        }`}
         camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 5, 10]} intensity={2} />
-          <spotLight position={[0, 50, 10]} angle={0.15} penumbra={1} intensity={2} />
-          <hemisphereLight args={['#b1e1ff', '#000000', 1]} />
+          <spotLight
+            position={[0, 50, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={2}
+          />
+          <hemisphereLight args={["#b1e1ff", "#000000", 1]} />
 
           <Bird />
           <Sky isRotating={isRotating} />
@@ -98,13 +110,18 @@ const Home = () => {
         </Suspense>
       </Canvas>
 
-      <div className='absolute bottom-2 left-2'>
-        <Image
-          src={!isPlayingMusic ? soundoff : soundon}
-          alt='jukebox'
-          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          className='w-10 h-10 cursor-pointer object-contain'
-        />
+      <div className="absolute bottom-2 left-2">
+        {!isPlayingMusic ? (
+          <SoundoffIcon
+            onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+            className="w-10 h-10 cursor-pointer object-contain"
+          />
+        ) : (
+          <SoundonIcon
+            onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+            className="w-10 h-10 cursor-pointer object-contain"
+          />
+        )}
       </div>
     </section>
   );

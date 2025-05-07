@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { arrow } from "../assets/icons";
 import Image from "next/image";
+import { Arrow } from "./icons";
 
 type HomeInfoProps = {
   currentStage: number;
@@ -25,7 +25,7 @@ const HomeInfo = ({ currentStage }: HomeInfoProps) => {
 
         <Link href="/about" className="neo-brutalism-white py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3">
           Learn more
-          <Image src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
+          <Arrow className="w-4 h-4 object-contain" />
         </Link>
       </div>
     );
@@ -41,7 +41,7 @@ const HomeInfo = ({ currentStage }: HomeInfoProps) => {
 
         <Link href="/projects" className="neo-brutalism-white py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3">
           Visit my portfolio
-          <Image src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
+          <Arrow className="w-4 h-4 object-contain" />
         </Link>
       </div>
     );
