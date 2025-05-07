@@ -56,7 +56,7 @@ const HomeInfo = ({ currentStage }: HomeInfoProps) => {
         </p>
         <Link href="/contact" className="neo-brutalism-white py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3">
           Let's talk
-          <Image src={arrow} alt="arrow" className="w-4 h-4 object-contain" />
+          <Arrow className="w-4 h-4 object-contain" />
         </Link>
       </div>
     );
