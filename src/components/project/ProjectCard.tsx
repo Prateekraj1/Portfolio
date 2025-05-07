@@ -1,48 +1,68 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Arrow } from "../icons";
+import { Arrow, Github } from "../icons";
+import { FC } from "react";
 
 type ProjectProps = {
   name: string;
   description: string[];
-  iconUrl: any;
+  iconUrl: FC<{ className?: string }>;
   theme: string;
-  link: string;
+  live_link?: string;
+  github_link?: string;
 };
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <div className="lg:w-[400px] w-full" key={project.name}>
-      <div className="relative transition-[250ms] [perspective:500px] w-12 h-12">
-        <div className={`btn-back rounded-xl ${project.theme}`} />
-        <div className="btn-front rounded-xl flex justify-center items-center">
-          <img
-            src={project.iconUrl?.src}
-            alt="project-icon"
-            className="w-1/2 h-1/2 object-contain"
-          />
+    <div className="lg:w-[400px] w-full bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-6 space-y-4">
+      {/* Icon Section */}
+      <div className="relative w-11 h-11 [perspective:500px]">
+        <div
+          className={`btn-back absolute inset-0 rounded-xl ${project.theme}`}
+        />
+        <div className="btn-front relative z-10 flex items-center justify-center w-full h-full rounded-xl bg-white shadow-inner">
+          <project.iconUrl />
         </div>
       </div>
 
-      <div className="mt-5 flex flex-col">
-        <h4 className="text-2xl font-poppins font-semibold">{project.name}</h4>
+      {/* Content Section */}
+      <div className="space-y-2">
+        <h4 className="text-xl font-semibold text-gray-900">{project.name}</h4>
+        <ol className="list-disc ml-5 text-[15px] text-slate-600 space-y-1">
+          {project.description.map((item, index) => (
+            <li key={index} className="text-justify leading-relaxed">
+              {item}
+            </li>
+          ))}
+        </ol>
+      </div>
 
-        {project.description.map((item, index) => (
-          <p key={index} className="mt-2 text-slate-500">
-            {item}
-          </p>
-        ))}
-        <div className="mt-5 flex items-center gap-2 font-poppins">
+      {/* Links Section */}
+      <div className="flex items-center gap-5 pt-2 text-sm font-medium justify-between">
+        {project.live_link && (
           <Link
-            href={project.link}
+            href={project.live_link}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-blue-600"
+            className="flex items-center gap-1 text-blue-600 hover:text-blue-700 transition-colors"
           >
-            Live Link
+            <div className="flex gap-[12px] items-center justify-center">
+              <span className="w-[5px] h-[5px] rounded-[50%] bg-red-600 animate-ping" />
+              Live
+            </div>
           </Link>
-          <Arrow className="w-4 h-4 text-blue-600" />
-        </div>
+        )}
+
+        {project.github_link && (
+          <Link
+            href={project.github_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-gray-700 hover:text-black transition-colors"
+          >
+            <Github className="w-4 h-4" />
+            <span>GitHub</span>
+          </Link>
+        )}
       </div>
     </div>
   );

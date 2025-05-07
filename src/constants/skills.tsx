@@ -17,6 +17,7 @@ import {
   Mysql,
   Elasticsearch,
   Redis,
+  BootstrapIcon,
 } from "@/components/icons";
 
 import { FC } from "react";
@@ -90,6 +91,11 @@ export const skills: Skill[] = [
   {
     imageUrl: () => <Tailwindcss className="w-1/2 h-1/2 object-contain" />,
     name: "Tailwind CSS",
+    type: "Frontend",
+  },
+  {
+    imageUrl: () => <BootstrapIcon className="w-1/2 h-1/2 object-contain" />,
+    name: "Bootstrap",
     type: "Frontend",
   },
   {

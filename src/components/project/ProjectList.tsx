@@ -1,17 +1,10 @@
 import ProjectCard from "./ProjectCard";
-import { projects } from "@/constants/index";
-type ProjectProps = {
-  name: string;
-  description: string[];
-  iconUrl: string;
-  theme: string;
-  link: string;
-};
+import { projects } from "@/constants/projectsLinks";
 const ProjectList = () => {
   return (
     <div className="flex flex-wrap my-20 gap-16 block-container">
-      {projects.map((project: ProjectProps) => (
-        <ProjectCard key={project.name} project={project} />
+      {projects.map((project, index) => (
+        <ProjectCard key={index} project={project} />
       ))}
     </div>
   );
