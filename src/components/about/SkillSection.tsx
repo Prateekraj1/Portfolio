@@ -15,7 +15,7 @@ const SkillsSection = () => {
         My Skills
       </h3>
 
-      <div className="mt-16 flex flex-wrap gap-12">
+      <div className="mt-16 flex flex-wrap gap-12 max-[575px]:justify-center">
         {skills.map((skill: SkillProps) => (
           <div key={skill.name} className="flex flex-col items-center space-y-2">
             <motion.div
