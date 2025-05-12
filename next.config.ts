@@ -22,12 +22,11 @@ const nextConfig: NextConfig = {
 
     return config;
   },
-  async redirects() {
+  async rewrites() {
     return [
       {
         source: '/',
         destination: '/home',
-        permanent: true,
       },
     ];
   },
