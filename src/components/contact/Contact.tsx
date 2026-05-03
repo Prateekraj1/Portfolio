@@ -50,12 +50,6 @@ const Contact = () => {
               https://github.com/Prateekraj1
             </a>
           </p>
-
-          <p>
-            <span className="font-semibold text-gray-800">Mobile:</span>{" "}
-            <span>+91-8294867788</span>{" "}
-            <span className="text-sm text-gray-500">(Available on WhatsApp)</span>
-          </p>
         </div>
       </div>
 

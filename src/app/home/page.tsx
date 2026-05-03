@@ -1,13 +1,5 @@
-import Footer from "@/components/Footer";
-import Home from "@/components/Home";
-import React from "react";
+import MainHome from "@/components/Home";
 
-const page = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
-
-export default page;
+export default function Page() {
+  return <MainHome />;
+}

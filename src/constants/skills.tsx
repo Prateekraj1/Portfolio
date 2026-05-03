@@ -13,11 +13,11 @@ import {
   Redux,
   Tailwindcss,
   Typescript,
-  Php,
   Mysql,
   Elasticsearch,
   Redis,
   BootstrapIcon,
+  Python,
 } from "@/components/icons";
 
 import { FC } from "react";
@@ -34,19 +34,29 @@ type Skill = {
 };
 export const skills: Skill[] = [
   {
-    imageUrl: () => <Express className="w-1/2 h-1/2 object-contain" />,
-    name: "Express.js",
-    type: "Backend",
+    imageUrl: () => <Nextjs className="w-1/2 h-1/2 object-contain" />,
+    name: "Next.js",
+    type: "Frontend",
   },
   {
-    imageUrl: () => <Php className="w-1/2 h-1/2 object-contain" />,
-    name: "PHP",
+    imageUrl: () => <React className="w-1/2 h-1/2 object-contain" />,
+    name: "React",
+    type: "Frontend",
+  },
+  {
+    imageUrl: () => <Express className="w-1/2 h-1/2 object-contain" />,
+    name: "Express.js",
     type: "Backend",
   },
   {
     imageUrl: () => <Nodejs className="w-1/2 h-1/2 object-contain" />,
     name: "Node.js",
     type: "Backend",
+  },
+  {
+    imageUrl: () => <Python className="w-1/2 h-1/2 object-contain" />,
+    name: "Python",
+    type: "Backend"
   },
   {
     imageUrl: () => <Typescript className="w-1/2 h-1/2 object-contain" />,
@@ -56,16 +66,6 @@ export const skills: Skill[] = [
   {
     imageUrl: () => <Javascript className="w-1/2 h-1/2 object-contain" />,
     name: "JavaScript",
-    type: "Frontend",
-  },
-  {
-    imageUrl: () => <Nextjs className="w-1/2 h-1/2 object-contain" />,
-    name: "Next.js",
-    type: "Frontend",
-  },
-  {
-    imageUrl: () => <React className="w-1/2 h-1/2 object-contain" />,
-    name: "React",
     type: "Frontend",
   },
   {
