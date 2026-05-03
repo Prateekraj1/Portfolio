@@ -12,12 +12,12 @@
 import React, { useRef, useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
-import scene from "../assets/3d/fox.glb";
+const foxScene = "/models/fox.glb";
 
 // 3D Model from: https://sketchfab.com/3d-models/fox-f372c04de44640fbb6a4f9e4e5845c78
 export function Fox({ currentAnimation, ...props }) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(scene);
+  const { nodes, materials, animations } = useGLTF(foxScene);
   const { actions } = useAnimations(animations, group);
 
   // This effect will run whenever the currentAnimation prop changes
@@ -68,4 +68,4 @@ export function Fox({ currentAnimation, ...props }) {
   );
 }
 
-useGLTF.preload(scene);
+useGLTF.preload(foxScene);
